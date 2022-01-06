@@ -1,9 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package TiendaDeVideoJuegos;
-
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
 /**
  *
  * @author Artca
@@ -15,6 +12,8 @@ public class Alquiler extends javax.swing.JFrame {
      */
     public Alquiler() {
         initComponents();
+         MostrarJuegos();
+         MostrarPersonas();
     }
 
     /**
@@ -26,21 +25,179 @@ public class Alquiler extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel6 = new javax.swing.JLabel();
+        txtFin = new javax.swing.JTextField();
+        cmbJuego = new javax.swing.JComboBox<>();
+        cmbPersona = new javax.swing.JComboBox<>();
+        jLabel1 = new javax.swing.JLabel();
+        btnGuardar = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        cmbActivo = new javax.swing.JComboBox<>();
+        jLabel5 = new javax.swing.JLabel();
+        txtInicio = new javax.swing.JTextField();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+
+        jLabel6.setText("Fin de alquiler");
+
+        cmbJuego.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbJuegoActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel1.setText("Registrar alquiler");
+
+        btnGuardar.setText("Guardar Registro");
+        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardarActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setText("Elegir juego");
+
+        jLabel3.setText("Elegir persona");
+
+        jLabel4.setText("Alquiler activo?");
+
+        cmbActivo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SI", "NO" }));
+
+        jLabel5.setText("Inicio alquiler");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(146, 146, 146)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel2)
+                                .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jLabel6))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtInicio)
+                            .addComponent(txtFin)
+                            .addComponent(cmbJuego, 0, 222, Short.MAX_VALUE)
+                            .addComponent(cmbPersona, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(cmbActivo, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE)))))
+                .addContainerGap(56, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(btnGuardar)
+                .addGap(135, 135, 135))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addGap(23, 23, 23)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(cmbJuego, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(cmbPersona, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(cmbActivo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel5)
+                    .addComponent(txtInicio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(txtFin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void MostrarJuegos(){
+        ModeloJuego modJuegos = new ModeloJuego();
+        ArrayList<ModeloJuegos> listaJuegos = modJuegos.getJuegos();
+
+        cmbJuego.removeAllItems();
+    
+        for(int i = 0;i < listaJuegos.size(); i++){
+         cmbJuego.addItem(listaJuegos.get(i).getViju_nombre());
+        }    
+    }
+    private void MostrarPersonas(){
+        ModeloPersona modPersona = new ModeloPersona();
+        ArrayList<ModeloPersonas> listaPersonas = modPersona.getPersonas();
+    
+        cmbPersona.removeAllItems();
+    
+        for(int j = 0;j < listaPersonas.size(); j++){
+         cmbPersona.addItem(listaPersonas.get(j).getPers_nombres());
+        }
+    } 
+        
+    private void cmbJuegoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbJuegoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmbJuegoActionPerformed
+
+    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
+
+        Boolean guardar = true;
+        String mensaje = "";
+
+        String viju_nombre = cmbJuego.getSelectedItem().toString();
+        String pers_nombres = cmbPersona.getSelectedItem().toString();
+        String alju_alquiler_activo = cmbActivo.getSelectedItem().toString();
+        String alju_fecha_inicio_alquiler = txtInicio.getText();
+        String alju_fecha_fin_alquiler = txtFin.getText();
+
+        if(viju_nombre.length()==0){
+            guardar = false;
+            mensaje+= "Seleccione un juego\n";
+        }
+        if(pers_nombres.length()==0){
+            guardar = false;
+            mensaje+= "Escriba un cliente\n";
+        }
+        if(alju_alquiler_activo.length()==0){
+            guardar = false;
+            mensaje+= "Seleccione si está activo o no\n";
+        }
+        if(alju_fecha_inicio_alquiler.length()==0){
+            guardar = false;
+            mensaje+= "Escriba la fecha de inicio del alquiler\n";
+        }
+
+        if(guardar){
+            ControlAlquiler control = new ControlAlquiler();
+
+            //control.insertar(viju_nombre,pers_nombres,alju_alquiler_activo,alju_fecha_inicio_alquiler,alju_fecha_fin_alquiler);
+            cmbJuego.setSelectedItem("");
+            cmbPersona.setSelectedItem("");
+            cmbActivo.setSelectedItem("");
+            txtInicio.setText("");
+            txtFin.setText("");
+        } else JOptionPane.showMessageDialog(null, mensaje);
+    }//GEN-LAST:event_btnGuardarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -78,5 +235,17 @@ public class Alquiler extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnGuardar;
+    private javax.swing.JComboBox<String> cmbActivo;
+    private javax.swing.JComboBox<String> cmbJuego;
+    private javax.swing.JComboBox<String> cmbPersona;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JTextField txtFin;
+    private javax.swing.JTextField txtInicio;
     // End of variables declaration//GEN-END:variables
 }
