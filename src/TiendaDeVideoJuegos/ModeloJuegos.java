@@ -12,7 +12,8 @@ public class ModeloJuegos {
     private String viju_director;
     private String viju_productor;
     private String viju_tecnologia;
-    private Integer viju_precio_alquiler;  
+    private Integer viju_precio_alquiler;
+    private Integer viju_stock; 
 
     public String getViju_titulo() {
         return viju_titulo;
@@ -78,5 +79,12 @@ public class ModeloJuegos {
         this.viju_precio_alquiler = viju_precio_alquiler;
     }
     
+    public Integer getViju_stock() {
+        return viju_stock;
+    }
+
+    public void setViju_stock(Integer viju_stock) {
+        this.viju_stock = viju_stock;
+    }  
     
 }

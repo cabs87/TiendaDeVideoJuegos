@@ -40,6 +40,8 @@ public class Juegos extends javax.swing.JFrame {
         txtNombre = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        spnStock = new javax.swing.JSpinner();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -74,6 +76,8 @@ public class Juegos extends javax.swing.JFrame {
         jLabel9.setText("Precio Alquiler");
 
         jLabel4.setText("Año");
+
+        jLabel10.setText("Stock");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -114,9 +118,13 @@ public class Juegos extends javax.swing.JFrame {
                             .addComponent(txtTecnologia)))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(spnPrecioAlquiler, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(spnPrecioAlquiler)
+                            .addComponent(spnStock))))
                 .addContainerGap(80, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -156,7 +164,11 @@ public class Juegos extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
                     .addComponent(spnPrecioAlquiler, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel10)
+                    .addComponent(spnStock, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
                 .addComponent(btnGuardar)
                 .addContainerGap())
         );
@@ -181,6 +193,7 @@ public class Juegos extends javax.swing.JFrame {
         String viju_productor = txtProductor.getText();
         String viju_tecnologia = txtTecnologia.getText();
         int viju_precio_alquiler = Integer.parseInt(spnPrecioAlquiler.getValue().toString());
+        int viju_stock = Integer.parseInt(spnStock.getValue().toString());
 
         if(viju_titulo.length()==0){
             guardar = false;
@@ -220,10 +233,13 @@ public class Juegos extends javax.swing.JFrame {
             guardar = false;
             mensaje+= "Escriba el precio de alquiler\n";
         }
-
+        if(viju_stock==0){
+            guardar = false;
+            mensaje+= "Escriba el stock\n";
+        }
         if(guardar){
             ControlJuegos control = new ControlJuegos();
-            control.insertar(viju_titulo, viju_nombre, viju_ano, viju_protagonistas, viju_director, viju_productor, viju_tecnologia, viju_precio_alquiler);
+            control.insertar(viju_titulo, viju_nombre, viju_ano, viju_protagonistas, viju_director, viju_productor, viju_tecnologia, viju_precio_alquiler, viju_stock);
             txtTitulo.setText("");
             txtNombre.setText("");
             txtAno.setText("");
@@ -232,6 +248,7 @@ public class Juegos extends javax.swing.JFrame {
             txtProductor.setText("");
             txtTecnologia.setText("");
             spnPrecioAlquiler.setValue(0);
+            spnStock.setValue(0);
         } else JOptionPane.showMessageDialog(null, mensaje);
     }//GEN-LAST:event_btnGuardarActionPerformed
 
@@ -273,6 +290,7 @@ public class Juegos extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnGuardar;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -282,6 +300,7 @@ public class Juegos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JSpinner spnPrecioAlquiler;
+    private javax.swing.JSpinner spnStock;
     private javax.swing.JTextField txtAno;
     private javax.swing.JTextField txtDirector;
     private javax.swing.JTextField txtNombre;
