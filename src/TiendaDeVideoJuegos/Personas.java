@@ -27,21 +27,21 @@ public class Personas extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         txtCorreo = new javax.swing.JTextField();
         txtDireccion = new javax.swing.JTextField();
-        spnDocumento = new javax.swing.JSpinner();
         cmbSexo = new javax.swing.JComboBox<>();
-        spnTelefono = new javax.swing.JSpinner();
         jLabel8 = new javax.swing.JLabel();
-        spnCelular = new javax.swing.JSpinner();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         btnGuardar = new javax.swing.JButton();
         txtNombres = new javax.swing.JTextField();
-        spnEdad = new javax.swing.JSpinner();
         jLabel4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
+        txtDocumento = new javax.swing.JTextField();
+        txtEdad = new javax.swing.JTextField();
+        txtTelefono = new javax.swing.JTextField();
+        txtCelular = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -76,8 +76,6 @@ public class Personas extends javax.swing.JFrame {
             }
         });
 
-        spnEdad.setModel(new javax.swing.SpinnerNumberModel(0, 0, 110, 1));
-
         jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel4.setText("Apellidos");
 
@@ -104,8 +102,8 @@ public class Personas extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtDireccion)
                             .addComponent(txtCorreo)
-                            .addComponent(spnTelefono)
-                            .addComponent(spnCelular)))
+                            .addComponent(txtTelefono)
+                            .addComponent(txtCelular)))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -114,13 +112,17 @@ public class Personas extends javax.swing.JFrame {
                                 .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addComponent(jLabel5)
                             .addComponent(jLabel6))
-                        .addGap(40, 40, 40)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(spnDocumento)
-                            .addComponent(cmbSexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtApellidos, javax.swing.GroupLayout.DEFAULT_SIZE, 182, Short.MAX_VALUE)
-                            .addComponent(txtNombres, javax.swing.GroupLayout.DEFAULT_SIZE, 182, Short.MAX_VALUE)
-                            .addComponent(spnEdad))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(40, 40, 40)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(cmbSexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtApellidos, javax.swing.GroupLayout.DEFAULT_SIZE, 182, Short.MAX_VALUE)
+                                    .addComponent(txtNombres, javax.swing.GroupLayout.DEFAULT_SIZE, 182, Short.MAX_VALUE)
+                                    .addComponent(txtDocumento)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGap(39, 39, 39)
+                                .addComponent(txtEdad, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(88, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -147,25 +149,25 @@ public class Personas extends javax.swing.JFrame {
                     .addComponent(jLabel4)
                     .addComponent(txtApellidos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel5)
-                    .addComponent(spnDocumento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtDocumento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
-                    .addComponent(spnEdad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtEdad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
                     .addComponent(txtDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel8)
-                    .addComponent(spnTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel9)
-                    .addComponent(spnCelular, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtCelular, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel10)
@@ -186,11 +188,11 @@ public class Personas extends javax.swing.JFrame {
         String pers_sexo = cmbSexo.getSelectedItem().toString();
         String pers_nombres = txtNombres.getText();
         String pers_apellidos = txtApellidos.getText();
-        int pers_documento = Integer.parseInt(spnDocumento.getValue().toString());
-        int pers_edad = Integer.parseInt(spnEdad.getValue().toString());
+        String pers_documento = txtDocumento.getText();
+        String pers_edad = txtEdad.getText();
         String pers_direccion = txtDireccion.getText();
-        int pers_telefono = Integer.parseInt(spnTelefono.getValue().toString());
-        int pers_celular = Integer.parseInt(spnCelular.getValue().toString());
+        String pers_telefono = txtTelefono.getText();
+        String pers_celular = txtCelular.getText();
         String pers_correo_electronico = txtCorreo.getText();
 
         if(pers_sexo.length()==0){
@@ -205,11 +207,11 @@ public class Personas extends javax.swing.JFrame {
             guardar = false;
             mensaje+= "Escriba su apellido\n";
         }
-        if(pers_documento==0){
+        if(pers_documento.length()==0){
             guardar = false;
             mensaje+= "Escriba su documento\n";
         }
-        if(pers_edad==0){
+        if(pers_edad.length()==0){
             guardar = false;
             mensaje+= "Escriba su edad\n";
         }
@@ -217,11 +219,11 @@ public class Personas extends javax.swing.JFrame {
             guardar = false;
             mensaje+= "Escriba su direccion\n";
         }
-        if(pers_telefono==0){
+        if(pers_telefono.length()==0){
             guardar = false;
             mensaje+= "Escriba su telefóno\n";
         }
-        if(pers_celular==0){
+        if(pers_celular.length()==0){
             guardar = false;
             mensaje+= "Escriba su celular\n";
         }
@@ -237,11 +239,11 @@ public class Personas extends javax.swing.JFrame {
             control.insertar(pers_sexo,pers_nombres,pers_apellidos,pers_documento,pers_edad,pers_direccion,pers_telefono,pers_celular,pers_correo_electronico);
             txtNombres.setText("");
             txtApellidos.setText("");
-            spnDocumento.setValue(0);
-            spnEdad.setValue(0);
+            txtDocumento.setText("");
+            txtEdad.setText("");
             txtDireccion.setText("");
-            spnTelefono.setValue(0);
-            spnCelular.setValue(0);
+            txtTelefono.setText("");
+            txtCelular.setText("");
             txtCorreo.setText("");
         } else JOptionPane.showMessageDialog(null, mensaje);
     }//GEN-LAST:event_btnGuardarActionPerformed
@@ -294,13 +296,13 @@ public class Personas extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JSpinner spnCelular;
-    private javax.swing.JSpinner spnDocumento;
-    private javax.swing.JSpinner spnEdad;
-    private javax.swing.JSpinner spnTelefono;
     private javax.swing.JTextField txtApellidos;
+    private javax.swing.JTextField txtCelular;
     private javax.swing.JTextField txtCorreo;
     private javax.swing.JTextField txtDireccion;
+    private javax.swing.JTextField txtDocumento;
+    private javax.swing.JTextField txtEdad;
     private javax.swing.JTextField txtNombres;
+    private javax.swing.JTextField txtTelefono;
     // End of variables declaration//GEN-END:variables
 }

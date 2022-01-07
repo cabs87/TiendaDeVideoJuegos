@@ -12,8 +12,8 @@ public class ModeloJuegos {
     private String viju_director;
     private String viju_productor;
     private String viju_tecnologia;
-    private Integer viju_precio_alquiler;
-    private Integer viju_stock; 
+    private String viju_precio_alquiler;
+    private String viju_stock; 
 
     public String getViju_titulo() {
         return viju_titulo;
@@ -71,19 +71,19 @@ public class ModeloJuegos {
         this.viju_tecnologia = viju_tecnologia;
     }
 
-    public Integer getViju_precio_alquiler() {
+    public String getViju_precio_alquiler() {
         return viju_precio_alquiler;
     }
 
-    public void setViju_precio_alquiler(Integer viju_precio_alquiler) {
+    public void setViju_precio_alquiler(String viju_precio_alquiler) {
         this.viju_precio_alquiler = viju_precio_alquiler;
     }
     
-    public Integer getViju_stock() {
+    public String getViju_stock() {
         return viju_stock;
     }
 
-    public void setViju_stock(Integer viju_stock) {
+    public void setViju_stock(String viju_stock) {
         this.viju_stock = viju_stock;
     }  
     

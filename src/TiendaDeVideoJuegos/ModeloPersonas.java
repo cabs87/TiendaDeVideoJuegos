@@ -9,11 +9,11 @@ public class ModeloPersonas {
     private String pers_sexo;
     private String pers_nombres;
     private String pers_apellidos;
-    private Integer pers_documento;
-    private Integer pers_edad;
+    private String pers_documento;
+    private String pers_edad;
     private String pers_direccion;
-    private Integer pers_telefono;
-    private Integer pers_celular;
+    private String pers_telefono;
+    private String pers_celular;
     private String pers_correo_electronico;
 
     public Integer getPers_id() {
@@ -48,19 +48,19 @@ public class ModeloPersonas {
         this.pers_apellidos = pers_apellidos;
     }
 
-    public Integer getPers_documento() {
+    public String getPers_documento() {
         return pers_documento;
     }
 
-    public void setPers_documento(Integer pers_documento) {
+    public void setPers_documento(String pers_documento) {
         this.pers_documento = pers_documento;
     }
 
-    public Integer getPers_edad() {
+    public String getPers_edad() {
         return pers_edad;
     }
 
-    public void setPers_edad(Integer pers_edad) {
+    public void setPers_edad(String pers_edad) {
         this.pers_edad = pers_edad;
     }
 
@@ -72,19 +72,19 @@ public class ModeloPersonas {
         this.pers_direccion = pers_direccion;
     }
 
-    public Integer getPers_telefono() {
+    public String getPers_telefono() {
         return pers_telefono;
     }
 
-    public void setPers_telefono(Integer pers_telefono) {
+    public void setPers_telefono(String pers_telefono) {
         this.pers_telefono = pers_telefono;
     }
 
-    public Integer getPers_celular() {
+    public String getPers_celular() {
         return pers_celular;
     }
 
-    public void setPers_celular(Integer pers_celular) {
+    public void setPers_celular(String pers_celular) {
         this.pers_celular = pers_celular;
     }
 

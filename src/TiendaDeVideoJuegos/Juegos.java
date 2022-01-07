@@ -22,7 +22,6 @@ public class Juegos extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        spnPrecioAlquiler = new javax.swing.JSpinner();
         jLabel5 = new javax.swing.JLabel();
         txtAno = new javax.swing.JTextField();
         txtProtagonistas = new javax.swing.JTextField();
@@ -41,7 +40,8 @@ public class Juegos extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        spnStock = new javax.swing.JSpinner();
+        txtAlquiler = new javax.swing.JTextField();
+        txtStock = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -123,8 +123,8 @@ public class Juegos extends javax.swing.JFrame {
                             .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(spnPrecioAlquiler)
-                            .addComponent(spnStock))))
+                            .addComponent(txtAlquiler)
+                            .addComponent(txtStock))))
                 .addContainerGap(80, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -163,11 +163,11 @@ public class Juegos extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
-                    .addComponent(spnPrecioAlquiler, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtAlquiler, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
-                    .addComponent(spnStock, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtStock, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
                 .addComponent(btnGuardar)
                 .addContainerGap())
@@ -192,8 +192,8 @@ public class Juegos extends javax.swing.JFrame {
         String viju_director = txtDirector.getText();
         String viju_productor = txtProductor.getText();
         String viju_tecnologia = txtTecnologia.getText();
-        int viju_precio_alquiler = Integer.parseInt(spnPrecioAlquiler.getValue().toString());
-        int viju_stock = Integer.parseInt(spnStock.getValue().toString());
+        String viju_precio_alquiler = txtAlquiler.getText();
+        String viju_stock = txtStock.getText();
 
         if(viju_titulo.length()==0){
             guardar = false;
@@ -229,11 +229,11 @@ public class Juegos extends javax.swing.JFrame {
             guardar = false;
             mensaje+= "Escriba la tecnología\n";
         }
-        if(viju_precio_alquiler==0){
+        if(viju_precio_alquiler.length()==0){
             guardar = false;
             mensaje+= "Escriba el precio de alquiler\n";
         }
-        if(viju_stock==0){
+        if(viju_stock.length()==0){
             guardar = false;
             mensaje+= "Escriba el stock\n";
         }
@@ -247,8 +247,8 @@ public class Juegos extends javax.swing.JFrame {
             txtDirector.setText("");
             txtProductor.setText("");
             txtTecnologia.setText("");
-            spnPrecioAlquiler.setValue(0);
-            spnStock.setValue(0);
+            txtAlquiler.setText(""); 
+            txtStock.setText("");
         } else JOptionPane.showMessageDialog(null, mensaje);
     }//GEN-LAST:event_btnGuardarActionPerformed
 
@@ -299,13 +299,13 @@ public class Juegos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JSpinner spnPrecioAlquiler;
-    private javax.swing.JSpinner spnStock;
+    private javax.swing.JTextField txtAlquiler;
     private javax.swing.JTextField txtAno;
     private javax.swing.JTextField txtDirector;
     private javax.swing.JTextField txtNombre;
     private javax.swing.JTextField txtProductor;
     private javax.swing.JTextField txtProtagonistas;
+    private javax.swing.JTextField txtStock;
     private javax.swing.JTextField txtTecnologia;
     private javax.swing.JTextField txtTitulo;
     // End of variables declaration//GEN-END:variables

@@ -17,7 +17,7 @@ public class ControlJuegos {
       modelo = new ModeloJuegos();
     }
     
-    public void insertar(String viju_titulo,String viju_nombre,String viju_ano,String viju_protagonistas,String viju_director,String viju_productor,String viju_tecnologia,Integer viju_precio_alquiler,Integer viju_stock){
+    public void insertar(String viju_titulo,String viju_nombre,String viju_ano,String viju_protagonistas,String viju_director,String viju_productor,String viju_tecnologia,String viju_precio_alquiler,String viju_stock){
         PreparedStatement ps;
         String sql;
         modelo.setViju_titulo(viju_titulo);
@@ -40,8 +40,8 @@ public class ControlJuegos {
         ps.setString(5, modelo.getViju_director());
         ps.setString(6, modelo.getViju_productor());
         ps.setString(7, modelo.getViju_tecnologia());
-        ps.setInt(8, modelo.getViju_precio_alquiler());
-        ps.setInt(9, modelo.getViju_stock()); 
+        ps.setString(8, modelo.getViju_precio_alquiler());
+        ps.setString(9, modelo.getViju_stock());  
 
         ps.executeUpdate();
         JOptionPane.showMessageDialog(null, "Se han insertado los datos");

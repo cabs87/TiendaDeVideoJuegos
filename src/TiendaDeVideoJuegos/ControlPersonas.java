@@ -17,7 +17,7 @@ public class ControlPersonas {
         modelo = new ModeloPersonas();
     }
     
-    public void insertar(String pers_sexo,String pers_nombres,String pers_apellidos,Integer pers_documento,Integer pers_edad,String pers_direccion,Integer pers_telefono,Integer pers_celular,String pers_correo_electronico){
+    public void insertar(String pers_sexo,String pers_nombres,String pers_apellidos,String pers_documento,String pers_edad,String pers_direccion,String pers_telefono,String pers_celular,String pers_correo_electronico){
         PreparedStatement ps;
         String sql;
         modelo.setPers_sexo(pers_sexo);
@@ -36,11 +36,11 @@ public class ControlPersonas {
             ps.setString(1,modelo.getPers_sexo());
             ps.setString(2, modelo.getPers_nombres());
             ps.setString(3, modelo.getPers_apellidos());
-            ps.setInt(4, modelo.getPers_documento());
-            ps.setInt(5, modelo.getPers_edad());
+            ps.setString(4, modelo.getPers_documento());
+            ps.setString(5, modelo.getPers_edad());
             ps.setString(6, modelo.getPers_direccion());
-            ps.setInt(7, modelo.getPers_telefono());
-            ps.setInt(8, modelo.getPers_celular());
+            ps.setString(7, modelo.getPers_telefono());
+            ps.setString(8, modelo.getPers_celular());
             ps.setString(9, modelo.getPers_correo_electronico());
 
             ps.executeUpdate();
